@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <com.sxy.markdowndemo.EditMarkDownView.TabIconView
+        android:id="@+id/mark_down_edit_optview"
+        android:background="@color/colorHomeMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#FFF">
+
+            <EditText
+                android:id="@+id/mark_down_edit_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:gravity="top"
+                android:textSize="17sp"
+                android:textColor="#111"
+                android:hint="标题"
+                android:imeActionId="@+id/login"
+                android:inputType="text"
+                android:padding="10dp"
+                android:scrollHorizontally="false"
+                android:maxLength="20"
+                android:maxLines="1"/>
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="0.3dp"
+                android:background="#B6B6B6"/>
+
+            <EditText
+                android:id="@+id/mark_down_edit_content"
+                android:textSize="16sp"
+                android:textColor="#333"
+                android:layout_width="match_parent"
+                android:minHeight="300dp"
+                android:layout_height="match_parent"
+                android:gravity="top"
+                android:hint="内容"
+                android:background="@null"
+                android:inputType="textMultiLine|textLongMessage"
+                android:padding="10dp"
+                android:scrollHorizontally="false"
+                android:scrollbars="vertical"/>
+
+
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</LinearLayout>

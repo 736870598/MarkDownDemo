@@ -1,0 +1,26 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorHomeMain</item>
+        <item name="colorPrimaryDark">@color/colorHomeMain</item>
+        <item name="colorAccent">@color/colorHomeMain</item>
+        <item name="android:textColorPrimary">@color/colorHomeMain</item>
+        <item name="android:windowBackground">@color/colorBackground</item>
+    </style>
+
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:textColorHighlight">@color/colorHomeMain</item>
+    </style>
+
+    <style name="WebTitle"
+        parent="@android:style/TextAppearance">
+        <item name="android:textSize">18dp</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:marqueeRepeatLimit">marquee_forever</item>
+        <item name="android:scrollHorizontally">true</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+</resources>
