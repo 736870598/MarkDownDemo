@@ -3,6 +3,8 @@ package com.sxy.markdowndemo.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -11,7 +13,6 @@ import android.widget.Toast;
 
 import com.sxy.markdowndemo.EditMarkDownView.MarkDownEditView;
 import com.sxy.markdowndemo.R;
-import com.sxy.markdowndemo.uils.ViewUtils;
 
 /**
  *
@@ -61,10 +62,21 @@ public class EditMarkDownActivity extends AppCompatActivity{
             mdIntent.putExtra("title", title);
             mdIntent.putExtra("content", content);
 
-            ViewUtils.startActivity(mdIntent, this, mdEdit);
-        }
 
+            ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation( this, mdEdit, "SHARED_ELEMENT_NAME");
+            try {
+                ActivityCompat.startActivity(this, mdIntent, optionsCompat.toBundle());
+                //界面共享该图片元素
+            } catch (IllegalArgumentException e) {
+                startActivity(mdIntent);//如果异常 直接启动
+            }
+        }
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    protected void onDestroy() {
+        mdEdit.destroy();
+        super.onDestroy();
+    }
 }

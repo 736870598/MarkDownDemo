@@ -53,26 +53,26 @@ public class MarkDownEditView extends LinearLayout implements View.OnClickListen
     }
 
     private void initTabIconView() {
-        tabIconView.addTab(R.drawable.ic_action_undo, R.id.id_action_undo, this);
-        tabIconView.addTab(R.drawable.ic_action_redo, R.id.id_action_redo, this);
-        tabIconView.addTab(R.drawable.ic_shortcut_format_header_1, R.id.id_shortcut_format_header_1, this);
-        tabIconView.addTab(R.drawable.ic_shortcut_format_header_2, R.id.id_shortcut_format_header_2, this);
-        tabIconView.addTab(R.drawable.ic_shortcut_format_header_3, R.id.id_shortcut_format_header_3, this);
-        tabIconView.addTab(R.drawable.ic_shortcut_insert_link, R.id.id_shortcut_insert_link, this);
-        tabIconView.addTab(R.drawable.ic_shortcut_insert_photo, R.id.id_shortcut_insert_photo, this);
-        tabIconView.addTab(R.drawable.ic_shortcut_console, R.id.id_shortcut_console, this);
-        tabIconView.addTab(R.drawable.ic_shortcut_format_bold, R.id.id_shortcut_format_bold, this);
-        tabIconView.addTab(R.drawable.ic_shortcut_format_italic, R.id.id_shortcut_format_italic, this);
-        tabIconView.addTab(R.drawable.ic_shortcut_format_header_4, R.id.id_shortcut_format_header_4, this);
-        tabIconView.addTab(R.drawable.ic_shortcut_format_header_5, R.id.id_shortcut_format_header_5, this);
-        tabIconView.addTab(R.drawable.ic_shortcut_format_header_6, R.id.id_shortcut_format_header_6, this);
-        tabIconView.addTab(R.drawable.ic_shortcut_format_quote, R.id.id_shortcut_format_quote, this);
-        tabIconView.addTab(R.drawable.ic_shortcut_xml, R.id.id_shortcut_xml, this);
-        tabIconView.addTab(R.drawable.ic_shortcut_minus, R.id.id_shortcut_minus, this);
-        tabIconView.addTab(R.drawable.ic_shortcut_format_strikethrough, R.id.id_shortcut_format_strikethrough, this);
-        tabIconView.addTab(R.drawable.ic_shortcut_grid, R.id.id_shortcut_grid, this);
-        tabIconView.addTab(R.drawable.ic_shortcut_format_list_bulleted, R.id.id_shortcut_list_bulleted, this);
-        tabIconView.addTab(R.drawable.ic_shortcut_format_list_numbers, R.id.id_shortcut_format_numbers, this);
+        tabIconView.addTab(R.mipmap.ic_action_undo, R.id.id_action_undo, this);
+        tabIconView.addTab(R.mipmap.ic_action_redo, R.id.id_action_redo, this);
+        tabIconView.addTab(R.mipmap.ic_shortcut_format_header_1, R.id.id_shortcut_format_header_1, this);
+        tabIconView.addTab(R.mipmap.ic_shortcut_format_header_2, R.id.id_shortcut_format_header_2, this);
+        tabIconView.addTab(R.mipmap.ic_shortcut_format_header_3, R.id.id_shortcut_format_header_3, this);
+        tabIconView.addTab(R.mipmap.ic_shortcut_insert_link, R.id.id_shortcut_insert_link, this);
+        tabIconView.addTab(R.mipmap.ic_shortcut_insert_photo, R.id.id_shortcut_insert_photo, this);
+        tabIconView.addTab(R.mipmap.ic_shortcut_console, R.id.id_shortcut_console, this);
+        tabIconView.addTab(R.mipmap.ic_shortcut_format_bold, R.id.id_shortcut_format_bold, this);
+        tabIconView.addTab(R.mipmap.ic_shortcut_format_italic, R.id.id_shortcut_format_italic, this);
+        tabIconView.addTab(R.mipmap.ic_shortcut_format_header_4, R.id.id_shortcut_format_header_4, this);
+        tabIconView.addTab(R.mipmap.ic_shortcut_format_header_5, R.id.id_shortcut_format_header_5, this);
+        tabIconView.addTab(R.mipmap.ic_shortcut_format_header_6, R.id.id_shortcut_format_header_6, this);
+        tabIconView.addTab(R.mipmap.ic_shortcut_format_quote, R.id.id_shortcut_format_quote, this);
+        tabIconView.addTab(R.mipmap.ic_shortcut_xml, R.id.id_shortcut_xml, this);
+        tabIconView.addTab(R.mipmap.ic_shortcut_minus, R.id.id_shortcut_minus, this);
+        tabIconView.addTab(R.mipmap.ic_shortcut_format_strikethrough, R.id.id_shortcut_format_strikethrough, this);
+        tabIconView.addTab(R.mipmap.ic_shortcut_grid, R.id.id_shortcut_grid, this);
+        tabIconView.addTab(R.mipmap.ic_shortcut_format_list_bulleted, R.id.id_shortcut_list_bulleted, this);
+        tabIconView.addTab(R.mipmap.ic_shortcut_format_list_numbers, R.id.id_shortcut_format_numbers, this);
     }
 
     public void setTitle(String titleStr){
@@ -170,5 +170,12 @@ public class MarkDownEditView extends LinearLayout implements View.OnClickListen
         });
 
         dialog.show();
+    }
+
+    public void destroy() {
+        if (performEdit != null){
+            performEdit.clearHistory();
+            performEdit = null;
+        }
     }
 }

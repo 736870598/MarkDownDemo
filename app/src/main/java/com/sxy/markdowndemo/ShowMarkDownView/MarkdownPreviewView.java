@@ -7,9 +7,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.os.Build;
 import android.support.v4.widget.NestedScrollView;
-import android.support.v7.widget.ViewUtils;
 import android.util.AttributeSet;
-import android.view.View;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -58,7 +56,6 @@ public class MarkdownPreviewView extends NestedScrollView {
     }
 
     public final void parseMarkdown(String str, boolean z) {
-//        this.mWebView.loadUrl("http://xtc.gisoft.top/Files/Pictures/57e1cf89-ef8d-45f8-8190-1c06b971945f.md");
         this.mWebView.loadUrl("javascript:parseMarkdown(\"" + str.replace("\n", "\\n").replace("\"", "\\\"").replace("'", "\\'") + "\", " + z + ")");
     }
 
@@ -106,7 +103,7 @@ public class MarkdownPreviewView extends NestedScrollView {
 
         public final boolean shouldOverrideUrlLoading(WebView webView, String url) {
             if (url != null && !url.isEmpty()){
-                Intent webIntent = new Intent(getContext(), SeeFromWebViewActivity.class);
+                Intent webIntent = new Intent(getContext(), ShowWebViewActivity.class);
                 webIntent.putExtra("url", url);
                 getContext().startActivity(webIntent);
             }
@@ -116,7 +113,6 @@ public class MarkdownPreviewView extends NestedScrollView {
 
     /**
      * 截屏
-     *
      * @return
      */
     public Bitmap getScreen() {

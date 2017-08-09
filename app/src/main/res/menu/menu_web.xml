@@ -1,0 +1,27 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_refresh"
+        android:title="刷新"
+        android:orderInCategory="97"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_copy_url"
+        android:title="复制链接"
+        android:orderInCategory="98"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_clear_cache"
+        android:title="清楚缓存和历史"
+        android:orderInCategory="99"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_clear_cookie"
+        android:title="清理cookie"
+        android:orderInCategory="99"
+        app:showAsAction="never"/>
+
+</menu>

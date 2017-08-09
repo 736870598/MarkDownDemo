@@ -1,13 +1,12 @@
 package com.sxy.markdowndemo.ui;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.sxy.markdowndemo.R;
-import com.sxy.markdowndemo.uils.ViewUtils;
 
 public class MainActivity extends AppCompatActivity{
 
@@ -32,12 +31,12 @@ public class MainActivity extends AppCompatActivity{
         Intent mdIntent = new Intent(this, ShowMarkDownActivity.class);
         mdIntent.putExtra("content", mContent);
 
-        ViewUtils.startActivity(mdIntent, this, view);
+        startActivity(mdIntent);
     }
 
     public void editMd(View view){
         Intent edIntent = new Intent(this, EditMarkDownActivity.class);
-        ViewUtils.startActivity(edIntent, this, view);
+        startActivity(edIntent);
     }
 
 

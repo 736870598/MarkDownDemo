@@ -28,7 +28,7 @@
 
         <activity android:name=".ui.ShowMarkDownActivity" />
         <activity android:name=".ui.EditMarkDownActivity" />
-        <activity android:name=".ShowMarkDownView.SeeFromWebViewActivity" />
+        <activity android:name=".ShowMarkDownView.ShowWebViewActivity" />
     </application>
 
 </manifest>
