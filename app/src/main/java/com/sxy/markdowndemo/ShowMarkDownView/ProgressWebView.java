@@ -23,9 +23,9 @@ import android.widget.ProgressBar;
 import android.widget.TextSwitcher;
 
 /**
+ * 封装了带进度条显示的webview，而且实现了webview的基本配置
  * Created by Administrator on 2017/8/9/009.
  */
-
 public class ProgressWebView extends WebView {
 
     private ProgressBar progressbar;
@@ -54,10 +54,7 @@ public class ProgressWebView extends WebView {
     private void initWebView(Context context){
         progressbar = new ProgressBar(context, null,
                 android.R.attr.progressBarStyleHorizontal);
-        progressbar.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, 1, 0, 0));
-
-//        Drawable drawable = context.getResources().getDrawable(R.drawable.progress_bar_states);
-//        progressbar.setProgressDrawable(drawable);
+        progressbar.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, 10, 0, 0));
         addView(progressbar);
     }
 
